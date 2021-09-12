@@ -72,7 +72,7 @@ class myRecipeDetails : AppCompatActivity() {
             val intent = Intent(this@myRecipeDetails, myRecipeEditDetails::class.java)
             intent.putExtra("myRecipeID",myrecipeid)
             intent.putExtra("recipeImage",myrecipeimage)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent)
         }
 
@@ -114,8 +114,9 @@ class myRecipeDetails : AppCompatActivity() {
                     .delete()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Successfully Deleted", Toast.LENGTH_LONG).show()
-                        finish()
-                        startActivity(Intent(this@myRecipeDetails, myRecipeList::class.java))
+                        val intent = Intent(this@myRecipeDetails, myRecipeList::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
 
                     }
                     .addOnFailureListener{

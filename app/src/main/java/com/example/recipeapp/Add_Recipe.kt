@@ -161,8 +161,9 @@ class Add_Recipe : AppCompatActivity() {
                                         .addOnSuccessListener {
                                             Toast.makeText(this, "Insert successful", Toast.LENGTH_LONG)
                                                 .show()
-                                            startActivity(Intent(this@Add_Recipe, Main::class.java))
-                                            finish()
+                                            val intent = Intent(this@Add_Recipe, Login::class.java)
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                                            startActivity(intent)
                                         }
                                         .addOnFailureListener { e ->
                                             Log.w(ContentValues.TAG, "Error adding document", e)

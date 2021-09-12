@@ -43,12 +43,16 @@ class Main : AppCompatActivity() {
 
 
         btnadd.setOnClickListener {
-            startActivity(Intent(this@Main, Add_Recipe::class.java))
+            val intent = Intent(this@Main, Add_Recipe::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK )
+            startActivity(intent)
 
         }
 
         iv_user.setOnClickListener {
-            startActivity(Intent(this@Main, myRecipeList::class.java))
+            val intent = Intent(this@Main, myRecipeList::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK )
+            startActivity(intent)
 
         }
 

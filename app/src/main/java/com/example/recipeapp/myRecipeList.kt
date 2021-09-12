@@ -31,7 +31,10 @@ class myRecipeList : AppCompatActivity() {
 
         btnsignout.setOnClickListener {
             auth.signOut()
-            startActivity(Intent(this@myRecipeList, Login::class.java))
+//            startActivity(Intent(this@myRecipeList, Login::class.java))
+            val intent = Intent(this@myRecipeList, Login::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
             finish()
         }
 
