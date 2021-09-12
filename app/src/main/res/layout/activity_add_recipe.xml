@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    tools:context=".Add_Recipe"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <ImageView
+        android:id="@+id/ivRecipeImage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/tvingredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Ingredients"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivRecipeImage" />
+
+    <EditText
+        android:id="@+id/etingredient"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="#6dabf4"
+        android:layout_marginTop="12dp"
+        android:inputType="text|textMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/tvingredient"
+        tools:layout_editor_absoluteX="0dp"
+        android:backgroundTint="@color/white"
+        android:gravity="top"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/tvstep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Steps"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etingredient" />
+
+    <EditText
+        android:id="@+id/etstep"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="12dp"
+        android:inputType="text|textMultiLine"
+        android:textColor="#6dabf4"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@+id/tvstep"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tvrecipetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Recipe Type"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etstep" />
+
+    <Spinner
+        android:id="@+id/spinnerRecipeType"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:textColor="#6dabf4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvrecipetype" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnsave"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:text="Save"
+        android:textColor="#6dabf4"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRecipeType" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
